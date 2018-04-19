@@ -12,5 +12,4 @@ node {
 
   stage 'Push image to registry'
   sh("docker push ${imageTag}")
-  }
 }
