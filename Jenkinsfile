@@ -5,11 +5,11 @@ node {
   checkout scm
   
   stage 'Build image'
-  sh("docker build -t ${imageTag} -f src/Dockerfile")
+  sh("sudo docker build -t ${imageTag} -f src/Dockerfile")
 
   stage 'Docker login'
-  sh("docker login -u elustgarten@apprenda.com -p @ppr3nd@")
+  sh("sudo docker login -u elustgarten@apprenda.com -p @ppr3nd@")
 
   stage 'Push image to registry'
-  sh("docker push ${imageTag}")
+  sh("sudo docker push ${imageTag}")
 }
